@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Convite</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f0f0;
+        }
+        .modal {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            z-index: 1000;
+        }
+        .modal img {
+            max-width: 100%;
+            border-radius: 10px;
+        }
+        .modal-buttons {
+            margin-top: 20px;
+        }
+        .modal-buttons button {
+            margin: 0 10px;
+            padding: 10px 20px;
+            font-size: 16px;
+        }
+        .modal-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 999;
+        }
+    
+    </style>
+</head>
+<body>
+    <div class="login-form">
+        <h2>Login</h2>
+        <form id="loginForm">
+            <div>
+                <label for="username">Nome:</label>
+                <input type="text" id="username" name="username" required>
+            </div>
+            <div>
+                <label for="password">Senha:</label>
+                <input type="password" id="password" name="password" required>
+            </div>
+            <div>
+                <button type="submit">Login</button>
+            </div>
+        </form>
+    </div>
+
+    <div id="modal" class="modal">
+        <p>Aceita sair comigo?</p>
+        <img src="https://i.giphy.com/media/v1.Y2lkPTc5MGI3NjExa2N6Znc2Zm1odzBoM3Q4aDBuMHBqeGg0eTZiNWo2cXJ2dDBpczA1NyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/V3TtZ4IWyVZgk/giphy.gif" alt="Gif animado">
+        <div class="modal-buttons">
+            <button id="yesButton">Sim</button>
+            <button id="noButton">Não</button>
+        </div>
+    </div>
+    <div class="modal-overlay" id="modalOverlay"></div>
+
+    <script>
+        document.getElementById('loginForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            document.getElementById('modal').style.display = 'block';
+            document.getElementById('modalOverlay').style.display = 'block';
+        });
+
+        document.getElementById('yesButton').addEventListener('click', function() {
+            alert('Os olhinhos de gato não falha nunca kkkkkk 😛 vamos marcar');
+            closeModal();
+        });
+
+        document.getElementById('noButton').addEventListener('click', function() {
+            alert('Você não é nem doida! Volta lá!');
+            closeModal();
+        });
+
+        document.getElementById('modalOverlay').addEventListener('click', closeModal);
+
+        function closeModal() {
+            document.getElementById('modal').style.display = 'none';
+            document.getElementById('modalOverlay').style.display = 'none';
+        }
+    </script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
